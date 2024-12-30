@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Hidden Object</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="cont">
+                <h1>Find the Hi<span>dden Object</span></h1>
+                <h2>Game Ins<span>tructions</span></h2>
+                <p>1. Click on the "Start <span>Game" button to begin.</span></p>
+                <p>2. Search for the hidden <span>object within the image.</span></p>
+                <p>3. Find & Click on the hid<span>den object to win the game.</span></p>
+                <!-- <button onclick="startGame()" class="start"><span id="start">Start</span> Game</button> -->
+                <p class="clue">4. Object is <span>Fire</span></p>
+                <div class="fire">
+                    <div class="fire-left">
+                        <div class="main-fire"></div>
+                        <div class="particle-fire"></div>
+                    </div>
+                    <div class="fire-center">
+                        <div class="main-fire"></div>
+                        <div class="particle-fire"></div>
+                    </div>
+                    <div class="fire-right">
+                        <div class="main-fire"></div>
+                        <div class="particle-fire"></div>
+                    </div>
+                    <div class="fire-bottom">
+                        <div class="main-fire"></div>
+                    </div>
+                </div>
+                <button class="neo-pop-tilted-button" onclick="startGame()">
+                    <span>Play Now</span>
+                </button>
+
+            </div>
+            <div id="gameContainer">
+                <img id="clutteredImage" src="cluttered.png" alt="Cluttered Image">
+                <div class="hiddenObject" id="hiddenObject"></div>
+            </div>
+            <p id="feedback"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

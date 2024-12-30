@@ -1,0 +1,437 @@
+body {
+  font-family: "Mountains of Christmas", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  /* christmas theme */
+  background: linear-gradient(
+    90deg,
+    #ff0000 0%,
+    #ff0000 50%,
+    #ffffff 50%,
+    #ffffff 100%
+  );
+  color: white;
+}
+
+.clue {
+  font-size: 34px;
+  margin-top: 20px;
+  text-align: center;
+  color: yellow;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #9e4a00;
+  float: left !important;
+  font-family: "Sofia", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+  margin-top: 0;
+  text-align: center;
+  /* text-shadow: 2px 2px 4px #000000; */
+  height: 100vh;
+}
+
+#gameContainer {
+  position: relative;
+  width: 600px * 1.5;
+
+  border: 2px solid white;
+  margin-bottom: 20px;
+}
+#gameContainer img {
+  width: 800px;
+  object-fit: cover;
+}
+
+.hiddenObject {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: block;
+}
+
+#congratsMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 124px;
+  z-index: 1000;
+  font-weight: 900;
+  text-align: center;
+  font-family: "Mountains of Christmas", cursive;
+  animation: border 1s infinite;
+}
+
+/* code for animation of congrats message */
+
+@keyframes border {
+  0% {
+    border: 5px solid white;
+    box-shadow: 0 0 30px white;
+    text-shadow: 0 0 30px red;
+  }
+  50% {
+    border: 5px solid red;
+    box-shadow: 0 0 30px red;
+    text-shadow: 0 0 30px white;
+  }
+  100% {
+    border: 5px solid white;
+    box-shadow: 0 0 30px white;
+    text-shadow: 0 0 30px red;
+  }
+}
+
+.start {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 50%,
+    #ff0000 50%,
+    #ff0000 100%
+  );
+  color: white;
+  padding: 10px 23px;
+  border: none;
+  box-shadow: 0 0 20px #00d5ff;
+  width: 180px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 5px;
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.start:hover {
+  font-size: 30px;
+  width: 240px;
+}
+
+#feedback {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 70px;
+  /* /* give more space between letters */
+  margin-left: 10px;
+  /* text-shadow: 2px 2px 4px #000000; */
+}
+
+p {
+  font-size: 28px;
+  margin-left: 10px;
+}
+
+span {
+  color: red;
+  /* text-shadow: 2px 2px 4px #000000; */
+}
+
+h2 {
+  font-size: 40px;
+  /* margin-left: 10px; */
+}
+
+/* From Uiverse.io by Ashon-G */
+.neo-pop-tilted-button {
+  border: 0.1px;
+  padding-bottom: 6px;
+  /* box-shadow: 1px 5px 7px #494a4b; */
+  position: relative;
+  overflow: hidden;
+  background-color: #b7a81d;
+  color: #000000;
+  font-size: 1.55rem;
+  font-weight: 600;
+  cursor: pointer;
+  transform: perspective(180px) rotateX(25deg) translateY(2px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.neo-pop-tilted-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(196, 196, 196, 0.8) 5px,
+    rgba(196, 196, 196, 0) 5px,
+    rgba(196, 196, 196, 0) 10px,
+    rgba(196, 196, 196, 0.8) 2px
+  );
+  animation: shimmer 5.5s infinite linear;
+}
+
+.neo-pop-tilted-button span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 5px,
+    rgba(255, 255, 255, 0) 5px,
+    rgba(255, 255, 255, 0) 10px,
+    rgba(255, 255, 255, 1) 2px
+  );
+  animation: shimmer 5.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-1950%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.neo-pop-tilted-button span {
+  background: #ffeb34;
+  padding: 1rem 2.5rem;
+  position: relative;
+  z-index: 1;
+  display: block;
+  border-radius: 0px;
+}
+
+.neo-pop-tilted-button:focus {
+  outline: none;
+}
+
+.neo-pop-tilted-button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 235, 52, 0.5);
+}
+
+button:active {
+  transform: perspective(170px) rotateX(36deg) translateY(5px);
+}
+
+/* From Uiverse.io by Admin12121 */
+@keyframes scaleUpDown {
+  0%,
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+
+  50%,
+  90% {
+    transform: scaleY(1.1);
+  }
+
+  75% {
+    transform: scaleY(0.95);
+  }
+
+  80% {
+    transform: scaleX(0.95);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: skewX(0) scale(1);
+  }
+
+  50% {
+    transform: skewX(5deg) scale(0.9);
+  }
+}
+
+@keyframes particleUp {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    top: -100%;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    background-color: #ef5a00;
+  }
+
+  50% {
+    background-color: #ff7800;
+  }
+}
+
+.fire {
+  position: absolute;
+  top: calc(80% - 50px);
+  left: calc(70% - 50px);
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fire-center {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: scaleUpDown 3s ease-out;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-center .main-fire {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    farthest-corner at 10px 0,
+    #ff4810 0%,
+    #ef5a00 95%
+  );
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+  filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-center .particle-fire {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  width: 10px;
+  height: 10px;
+  background-color: #ef5a00;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px #d43322);
+  animation: particleUp 2s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-right {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  animation: shake 2s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-right .main-fire {
+  position: absolute;
+  top: 15%;
+  right: -25%;
+  width: 80%;
+  height: 80%;
+  background-color: #ef5a00;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+  filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-right .particle-fire {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #ef5a00;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px #d43322);
+  animation: particleUp 2s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-left {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: shake 3s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+
+.fire-left .main-fire {
+  position: absolute;
+  top: 15%;
+  left: -20%;
+  width: 80%;
+  height: 80%;
+  background-color: #ef5a00;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 60% 40%;
+  filter: drop-shadow(0 0 10px #d43322);
+}
+
+.fire-left .particle-fire {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 10%;
+  height: 10%;
+  background-color: #ef5a00;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px #d43322);
+  animation: particleUp 3s infinite ease-out 0;
+  animation-fill-mode: both;
+}
+
+.fire-bottom .main-fire {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 75%;
+  height: 75%;
+  background-color: #ff7800;
+  transform: scaleX(0.8) rotate(45deg);
+  border-radius: 0 40% 100% 40%;
+  filter: blur(10px);
+  animation: glow 2s ease-out 0;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
