@@ -29,7 +29,7 @@ function findObject() {
   document.body.appendChild(congratsMessage);
 
   setTimeout(function () {
-    location.href = "https://www.google.com";
+    location.href = "../spot-the-star-game/index.html";
   }, 5000);
 
   hiddenObject.removeEventListener("click", findObject);
