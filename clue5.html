@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue 5</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Mountains of Christmas", cursive;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        h1 {
+            color: #2c3e50;
+			font-size: 3rem;
+			background: linear-gradient(90deg, red, white);
+			background-size: 200% 200%;
+			-webkit-background-clip: text;
+			color: transparent;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #34495e;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #nextTask {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #nextTask:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Switch to Search Mode </h1>
+        <p>Find out the number of switches on the 1st floor.</p>
+        <input type="text" id="answer" placeholder="Enter your answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <p id="result"></p>
+        <button id="nextTask" onclick="goToNextTask()">Next Task</button>
+    </div>
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value;
+            const result = document.getElementById('result');
+            const nextTaskButton = document.getElementById('nextTask');
+            if (answer == '59') {
+                result.textContent = 'Correct! The number of switches on the 1st floor is 59.';
+                result.style.color = 'green';
+                nextTaskButton.style.display = 'inline-block';
+            } else {
+                result.textContent = 'Incorrect. Try again.';
+                result.style.color = 'red';
+                nextTaskButton.style.display = 'none';
+            }
+        }
+
+        function goToNextTask() {
+
+			window.location.href = 'final Page.html';
+        }
+    </script>
+</body>
+</html>

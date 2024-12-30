@@ -62,7 +62,7 @@ function addBindi(event) {
 
   if (distance < 30) {
     feedback.textContent +=
-      " - You found the star! Congratulations! <br/> Redirecting to the next page...";
+      " - You found the star! Congratulations! \n Redirecting to the next page...";
     endGame();
   }
 
@@ -73,10 +73,10 @@ function addBindi(event) {
 
 function endGame() {
   //redirect to next page aftrer 10 seconds
-  // setTimeout(() => {
-  //     window.location.href = "";
-  // }, 5000
-  // );
+  setTimeout(() => {
+      window.location.href = "../clue5.html";
+  }, 5000
+  );
 }
 
 function calculateDistance(x1, y1, x2, y2) {
