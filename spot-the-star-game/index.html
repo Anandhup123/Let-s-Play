@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Spot the Star Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="cont">
+                <h1 class="title">Spot the Star</h1>
+                <h2>Game Instructions</h2>
+                <p>1. Click on the "Start Game" button to start the game.</p>
+                <p>2. Mouse Pointer will be hidden and you have to find the star in the image.</p>
+                <p>3. Click on the star to win the game.</p>
+                <p>4. You can take as much time as you want to find the star.</p>
+                <p>5. Click on the "Start Game" button to play again.</p>
+            </div>
+
+            <div id="gameContainer">
+                <img id="starImg" src="/images/christmas-tree.png" alt="Christmas Tree">
+                <!-- Marking the correct position temporarily -->
+                <div class="correctSpot" id="correctSpot"></div>
+            </div>
+            <div class="container1">
+
+                <!-- <input type="text" id="playerName" placeholder="enter name"> -->
+
+                <button onclick="startGame()" class="start">Start Game</button>
+                <p id="feedback"></p>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
