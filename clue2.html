@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Treasure Hunt </title>
+    <title>Clue 2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,172 +13,100 @@
     <style>
       body {
         font-family: "Mountains of Christmas", cursive;
-        text-align: center;
-        background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/10/Collage-Photos-1920x1080.jpg');
-        background-size: cover;
-        margin: 0;
-        padding: 0;
-        transition: background-color 1s ease-in-out;
-      }
-
-      .container {
-        padding: 20px;
-        max-width: 670px;
-        margin: 0 auto;
-        background-color: #ced4da;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        opacity: 0.9;
+        background-color: #f0f0f0;
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        align-items: center;
         height: 100vh;
+        margin: 0;
       }
-
       h1 {
-		background: -webkit-linear-gradient(red, white);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		font-size:5.2rem;
-		width: 100%;
+        background: linear-gradient(to right, red, rgb(255, 254, 254));
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 55px;
+        font-weight: bolder;
       }
-      p {
-        color: #000000;
-		font-weight: 600;
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
       }
-
-      .game-area {
-        margin: 20px 0;
+      .question {
+        font-size: 18px;
+        margin-bottom: 20px;
       }
-
-      .clue-btn {
-        padding: 10px 20px;
-        margin: 10px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
+      .input-group {
+        margin-bottom: 20px;
       }
-
-      .clue-btn:hover {
-        background-color: #0056b3;
-      }
-
-      #clue-box {
-        margin: 20px 0;
+      .input-group input {
         padding: 10px;
-        background-color: #fff3cd;
-        border: 1px solid #ffeeba;
-        border-radius: 5px;
-        color: #856404;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
       }
-
-      .hidden {
-        display: none;
-      }
-
-      .treasure-box {
-        margin: 20px 0;
-      }
-
-	#key-input {
-	  padding: 10px;
-	  width: 200px;
-	  margin-right: 10px;
-	  border: 2px solid #ced4da;
-	  border-radius: 5px;
-	  transition: border-color 0.3s;
-	}
-
-	#key-input:focus {
-	  border-color: #80bdff;
-	  outline: none;
-	}
-
       button {
         padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
         border: none;
-        border-radius: 5px;
+        border-radius: 4px;
         cursor: pointer;
-        transition: background-color 0.3s;
       }
-
       button:hover {
-        background-color: #218838;
+        background-color: #0056b3;
       }
-
-      #message {
-        font-weight: bold;
-        color: #dc3545;
+      .message {
+        font-size: 16px;
         margin-top: 20px;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Find Me If You Can..!</h1>
-      <p>Explore the clues and find the hidden key to open the treasure.</p>
-
-      <div class="game-area">
-        <button class="clue-btn" onclick="showClue(1)">Clue 1</button>
-        <button class="clue-btn" onclick="showClue(2)">Clue 2</button>
-        <button class="clue-btn" onclick="showClue(3)">Clue 3</button>
+      <h1>Let's search for something</h1>
+      <div class="question">
+        Which year did the printed the quote "A Pioneer in the field of IT
+        Training in state"?
       </div>
-<!-- Here is your Key : HaPpY NeW YeAr -->
-      <div id="clue-box" class="hidden">
-        <p id="clue-text"></p>
+      <div class="input-group">
+        <input type="text" id="answer-input" placeholder="Enter the year" />
       </div>
-
-      <div class="treasure-box">
-        <input type="text" id="key-input" placeholder="Enter the key here..." />
-        <button onclick="checkKey()">Open Treasure</button>
-      </div>
-
-      <p id="message"></p>
-      <div id="next-task" class="hidden">
-        <button onclick="goToNextTask()">Next Task</button>
-      </div>
+      <button onclick="checkAnswer()">Submit</button>
+      <div id="message" class="message"></div>
+      <button
+        id="next-task-button"
+        style="display: none;margin: 0 auto;"
+        onclick="goToNextTask()"
+      >
+        Next Task
+      </button>
     </div>
-
     <script>
-      const clues = [
-        "Clue 1: You can find the key in this HTML file.",
-        "Clue 2: The key is a phrase with alternating capital and small letters.",
-        "Clue 3: It is Just near to me ...!",
-      ];
-
-      function showClue(clueNumber) {
-        const clueBox = document.getElementById("clue-box");
-        const clueText = document.getElementById("clue-text");
-        clueText.innerText = clues[clueNumber - 1];
-        clueBox.classList.remove("hidden");
-		console.log("Ohno! You found me..!");
-        console.log("Here is your Key : HaPpY NeW YeAr");
-      }
       function goToNextTask() {
         window.location.href = "clue3.html";
-        // Add logic to navigate to the next task or page
       }
 
-      function checkKey() {
-        const keyInput = document.getElementById("key-input").value;
-        const message = document.getElementById("message");
-        const nextTaskButton = document.getElementById("next-task");
-        if (keyInput === "HaPpY NeW YeAr") {
-          message.style.color = "#28a745";
-          message.innerText =
-            "Congratulations! You found the key and opened the treasure!";
-          document.body.style.backgroundColor = "#d4edda"; // Change background color on success
-          nextTaskButton.classList.remove("hidden"); // Show Next Task button
+      function checkAnswer() {
+        const userAnswer = document.getElementById("answer-input").value;
+        const messageElement = document.getElementById("message");
+        const nextTaskButton = document.getElementById("next-task-button");
+
+        if (userAnswer === '2011') {
+          messageElement.style.color = "green";
+          messageElement.innerText = "Correct! You've solved the puzzle!";
+          nextTaskButton.style.display = "block";
         } else {
-          message.style.color = "#dc3545";
-          message.innerText = "Incorrect key. Try again!";
-          document.body.style.backgroundColor = "#f8d7da"; // Change background color on failure
-          nextTaskButton.classList.add("hidden"); // Hide Next Task button
+          messageElement.style.color = "red";
+          messageElement.innerText = "Incorrect. Try again.";
+          nextTaskButton.style.display = "none";
         }
       }
     </script>

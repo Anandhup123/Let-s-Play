@@ -82,3 +82,9 @@ function endGame() {
 function calculateDistance(x1, y1, x2, y2) {
   return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
 }
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+document.addEventListener("keydown", (event) => {
+  if (event.key === "F12" || (event.ctrlKey && event.shiftKey && event.key === "I")) {
+    event.preventDefault();
+  }
+});
